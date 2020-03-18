@@ -1,2 +1,19 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<div class="form-wrapper">
+  <div class="form login">
+    <h2>MONOPHOTONE</h2>
+    <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+      <%= f.email_field :email, class: 'form-control', placeholder: "メールアドレス" %>
+      <%= f.password_field :password, class: 'form-control', placeholder: "パスワード" %>
+      <%= link_to "パスワードをお忘れの方はこちら", "#" %>
+      <%= f.label :remember_me, class: "checkbox" do %>
+        <%= f.check_box :remember_me %>
+        <span>パスワードを保存する</span>
+      <% end %>
+      <%= f.submit "ログイン", class: "btn-black" %>
+    <% end %>
+    <div class="flexbox btn-white-wrapper">
+      <%= link_to "新規登録", signup_path, class: "btn-white" %>
+      <%= link_to "トップに戻る", root_path, class: "btn-white" %>
+    </div>
+  </div>
+</div>
