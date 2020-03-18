@@ -18,9 +18,47 @@
   </head>
 
   <body>
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% if logged_in? %>
+      <div class="wrapper flexbox">
+        <div class="header-wrapper flexbox">
+          <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                <i class="fa fa-bars"></i>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                  <%= render "shared/navbar" %>
+                </ul>
+              </div>
+            </nav>
+          <div class="user-information">
+            <h1>MONOPHOTONE</h1>
+          </div>
+          <div class="heading">
+            <%= render "shared/user-heading" %>
+          </div>
+        </div>
+        <div class="main-wrapper flexbox">
+          <aside>
+            <nav>
+              <ul class="flexbox">
+                <%= render "shared/navbar" %>
+              </ul>
+            </nav>
+          </aside>
+          <div class="main-content">
+            <% flash.each do |message_type, message| %>
+              <div class="alert alert-<%= message_type %>"><%= message %></div>
+            <% end %>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
     <% end %>
-    <%= yield %>
   </body>
 </html>
