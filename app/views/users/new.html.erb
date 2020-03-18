@@ -1,2 +1,13 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:url, signup_path) %>
+<% provide(:button_text, '新規登録') %>
+<div class="form-wrapper">
+  <div class="form">
+    <h2>MONOPHOTONE</h2>
+    <p>登録して画像をshareしよう</p>
+    <%= render "users/form" %>
+    <div class="flexbox btn-white-wrapper">
+      <%= link_to "ログイン", "#", class: "btn-white" %>
+      <%= link_to "トップに戻る", root_path, class: "btn-white" %>
+    </div>
+  </div>
+</div>
