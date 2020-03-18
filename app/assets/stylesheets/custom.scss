@@ -233,6 +233,195 @@ main {
   }
 }
 
+/* ======================================================
+  heading-wrapper
+======================================================*/
+.header-wrapper {
+  width: 100%;
+  .navbar {
+    background: black;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    .navbar-toggler {
+      font-size: 30px;
+    }
+    div {
+      ul {
+        background: black;
+        padding: 10px;
+        margin: 0 auto;
+        li {
+          width: 90%;
+          margin: 0 auto 10px;
+          margin-bottom: 10px;
+          a {
+            font-size: 18px;
+            padding: 10px 0;
+            text-decoration: none;
+          }
+          .btn-black {
+            border: 1px solid white;
+          }
+          .btn-white {
+            border: 1px solid white;
+          }
+        }
+      }
+    }
+  }
+  .user-information {
+    width: 100%;
+    margin-top: 40px;
+    height: 80px;
+    background: white;
+    display: flex;
+    h1 {
+      font-size: 22px;
+      font-weight: bold;
+      margin: auto;
+    }
+  }
+  .heading {
+    width: 100%;
+    background: black;
+    padding: 10px;
+    .user-heading-wrapper {
+      padding: 0 10px;
+      justify-content: flex-start;
+      .user-heading-logo {
+        width: 25%;
+        margin-left: 0;
+        a {
+          img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 50%;
+            filter: grayscale(1);
+          }
+        }
+        .follow-btn {
+          background: white;
+          padding: 4px 0;
+          width: 100%;
+          border-radius: 20px;
+          display: block;
+          margin-top: 10px; 
+          &:hover {
+            background: black;
+            transition: .3s;
+          }
+        }
+        .follow {
+          color: #3366FF;
+          border: 2px solid #3366FF;
+          &:hover {
+            border: 2px solid #3366FF;
+            color: #3366FF;
+          }
+        }
+        .unfollow {
+          color: red;
+          border: 2px solid red;
+          &:hover {
+            border: 2px solid red;
+            color: red;
+          }
+        }
+      }
+      .user-heading-info {
+        width: 75%;
+        h1 {
+          color: white;
+          font-size: 18px;
+          margin: 10px 0 10px;
+          text-align: center;
+        }
+        .stats {
+          width: 100%;
+          justify-content: center;
+          a {
+            border-radius: 10px;
+            text-decoration: none;
+            padding: 4px 0;
+            font-size: 14px;
+            width: 40%;
+            margin-right: 20px;
+            border: 1px solid white;
+          }
+          a:last-child {
+            margin-right: 0;
+          }
+        }
+        span {
+          display: block;
+          text-align: center;
+          color: white;
+          margin-top: 10px;
+        }
+      } 
+    }
+  }
+}
+
+/* ======================================================
+  main-wrapper
+======================================================*/
+.main-wrapper {
+  width: 100%;
+  aside {
+    padding: 10px;
+    background: black;
+    display: none;
+    nav {
+      ul {
+        flex-direction: column;
+        text-align: center;
+        background: black;
+        li {
+          background: white;
+          margin-bottom: 20px;
+          a {
+            color: black;
+            font-size: 14px;
+            padding: 10px 0;
+            position: relative;
+            &:before {
+              content: "";
+              width: 0;
+              height: 100%;
+              background: black;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+            &:hover {
+              color: white;
+              border: 1px solid white;
+              z-index: 1;
+            }
+            &:hover:before {
+              width: 100%;
+              transition: .6s;
+              z-index: -1;
+            }
+          }
+        }
+      }
+    }
+  }
+  .main-content {
+    background: white;
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+
 
 @media all and (min-width: 480px) {
 /* ======================================================
@@ -270,6 +459,92 @@ main {
   }
 }
 
+/* ======================================================
+  header-wrapper
+======================================================*/
+  .header-wrapper {
+    width: 100%;
+    .navbar {
+      display: none;
+    }
+    .user-information {
+      width: 100%;
+      margin-top: 0;
+      height: 80px;
+      display: flex;
+      h1 {
+        font-size: 24px;
+      }
+    }
+    .heading {
+      .user-heading-wrapper {
+        width: 480px;
+        margin: 0 auto;
+        .user-heading-logo {
+          width: 120px;
+          margin-right: 30px;
+          a {
+            img {
+              width: 120px;
+            }
+          }
+          .follow-btn {
+            padding: 10px 0;
+            width: 100px;
+            border-radius: 20px;
+            margin: 10px auto 0; 
+          }
+        }
+        .user-heading-info {
+          width: 300px;
+          margin: 0;
+          h1 {
+            font-size: 30px;
+            margin: 20px 0 10px;
+          }
+          .stats {
+            width: 100%;
+            justify-content: center;
+            a {
+              border-radius: 20px;
+              padding: 10px 0;
+              text-align: center;
+              width: 120px;
+              margin-right: 20px;
+            }
+            a:last-child {
+              margin-right: 0;
+            }
+          }
+          span {
+            margin-top: 20px;
+          }
+        } 
+      }
+    }
+  }
+
+/* ======================================================
+  main-wrapper
+======================================================*/
+  .main-wrapper {
+    width: 100%;
+    aside {
+      width: 20%;
+      display: block;
+      nav ul li {
+        margin-bottom: 16px;
+        a {
+          font-size: 12px;
+          padding: 14px 0;
+        }
+      }
+    }
+    .main-content {
+      width: 80%;
+      padding: 10px;
+    }
+  }
 @media all and (min-width: 1024px) {
 /* ======================================================
   フォーム
@@ -309,6 +584,54 @@ main {
           }
         }
       }
+    }
+  }
+
+/* ======================================================
+  header-wrapper
+======================================================*/
+  .header-wrapper {
+    height: 200px;
+    .navbar {
+      display: none;
+    }
+    .user-information {
+      margin-top: 0;
+      width: 20%;
+      height: 200px;
+      h1 {
+        font-size: 24px;
+      }
+    }
+    .heading {
+      width: 80%;
+      .user-heading-wrapper {
+        width: 500px;
+        margin: 0 auto;
+        justify-content: flex-start;
+        .user-heading-logo {
+          margin-left: 0;
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+/* ======================================================
+  main-wrapper
+======================================================*/
+  .main-wrapper {
+    aside {
+      padding: 30px;
+      nav ul li {
+        margin-bottom: 20px;
+        a {
+          font-size: 20px;
+          padding: 20px 0;
+        }
+      }
+    }
+    .main-content {
+      padding: 30px 30px 0;
     }
   }
 }
