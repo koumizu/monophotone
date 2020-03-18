@@ -100,6 +100,100 @@ body {
 }
 
 /* ======================================================
+ flash メッセージ
+======================================================*/
+.alert-danger {
+  background-color: white;
+  border-color: red;
+  color: red;
+  width: 90%;
+  margin: auto;
+}
+
+.alert-info {
+  width: 90%;
+  margin: auto;
+}
+
+#error_explanation {
+  .alert-danger {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  ul {
+    color: black;
+    margin-bottom: 30px;
+    list-style: circle;
+    margin-left: 30px;
+    li {
+      margin-bottom: 6px;
+    }
+  }
+}
+
+/* ======================================================
+  フォーム
+======================================================*/
+.form-wrapper {
+  background: black;
+  padding: 60px 0 0;
+  height: 800px;
+}
+
+.form {
+  background: white;
+  border: 1px solid black;
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  h2 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  h2 + p {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  input, textarea {
+    color: black;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  textarea {
+    height: 180px;
+  }
+  .btn-black {
+    margin-bottom: 0;
+    padding: 8px 0;
+    display: block;
+    color: white;
+    border-radius: 5px;
+    &:hover {
+      color: black;
+    }
+  } 
+}
+
+.btn-white-wrapper {
+  justify-content: space-around;
+  margin-top: 16px;
+  .btn-white {
+    padding: 8px 0;
+    width: 40%;
+    border-radius: 5px;
+  }
+}
+
+.checkbox {
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+/* ======================================================
   toppages/home
 ======================================================*/
 main {
@@ -136,6 +230,22 @@ main {
 
 @media all and (min-width: 480px) {
 /* ======================================================
+  flashメッセージ
+======================================================*/
+  .alert-danger {
+    width: 60%;
+  }
+  .alert-info {
+    width: 60%;
+  }
+  
+/* ======================================================
+  フォーム
+======================================================*/
+  .form {
+    width: 360px;
+  }
+/* ======================================================
   toppages/home
 ======================================================*/
   main {
@@ -155,6 +265,13 @@ main {
 }
 
 @media all and (min-width: 1024px) {
+/* ======================================================
+  フォーム
+======================================================*/
+  .form {
+    padding-top: 100px; 
+  }
+  
 /* ======================================================
   toppages/home
 ======================================================*/
