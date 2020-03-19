@@ -1,2 +1,14 @@
-<h1>PasswordResets#new</h1>
-<p>Find me in app/views/password_resets/new.html.erb</p>
+<div class="form-wrapper">
+  <div class="form password-reset">
+    <h2>MONOPHOTONE</h2>
+    <p>アカウントにアクセスするためのログインリンクを送信するため、メールアドレスを入力してください。</p>
+    <%= form_with(url: password_resets_path, scope: :password_reset, local: true) do |f| %>
+      <%= f.email_field :email, class: 'form-control', placeholder: "メールアドレス" %>
+      <%= f.submit "送信", class: "btn-black" %>
+    <% end %>
+    <div class="flexbox btn-white-wrapper">
+      <%= link_to "新規登録", signup_path, class: "btn-white" %>
+      <%= link_to "トップに戻る", root_path, class: "btn-white" %>
+    </div>
+  </div>
+</div>
