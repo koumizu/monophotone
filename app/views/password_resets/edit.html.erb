@@ -1,2 +1,12 @@
-<h1>PasswordResets#edit</h1>
-<p>Find me in app/views/password_resets/edit.html.erb</p>
+<div class="form-wrapper">
+  <div class="form">
+    <h2>MONOPHOTONE</h2>
+    <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= hidden_field_tag :email, @user.email, placeholder: "メールアドレス" %>
+      <%= f.password_field :password, class: 'form-control', placeholder: "パスワード" %>
+      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "パスワード確認" %>
+      <%= f.submit "パスワードを更新する", class: "btn-black" %>
+    <% end %>
+  </div>
+</div>
