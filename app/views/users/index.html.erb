@@ -1,0 +1,6 @@
+<div class="users">
+  <ul>
+    <%= render @users %>
+  </ul>
+  <%= will_paginate @users, class: "paginate", :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>
+</div>
