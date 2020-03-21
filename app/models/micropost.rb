@@ -1,4 +1,6 @@
 class Micropost < ApplicationRecord
+  has_many :favorites,  dependent: :destroy
+  has_many :like_users, through: :favorites, source: :user
   belongs_to :user
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
