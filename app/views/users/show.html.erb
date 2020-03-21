@@ -1,1 +1,17 @@
-<%= @user.name %>
+<div class="show">
+<% if @user.microposts.any? %>
+  <ul class="microposts flexbox">
+    <%= render @microposts %>
+  </ul>
+  <%= will_paginate @microposts %>
+<% else %>
+  <p class="zero-message">まだ投稿はありません。</p>
+  <% if @user == current_user %>
+    <p class="share-message">お気に入りな写真を投稿しよう！</p>
+    <%= link_to "投稿する", new_micropost_path, class: "btn-black" %>
+  <% end %>
+<% end %>
+</div>
+
+  
+ 

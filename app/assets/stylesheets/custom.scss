@@ -485,6 +485,60 @@ main {
   }
 }
 
+/* ======================================================
+  microposts/micropost
+======================================================*/
+.microposts {
+  li {
+    width: 100%;
+    height: 60vw;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    opacity: 1;
+    .photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(1);
+      transition: .4s;
+      &:hover {
+        transform: scale(1.2);
+        opacity: .3;
+      }
+    }
+    .image-info {
+      display: none;
+      color: white;
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      img {
+        filter: grayscale(1);
+        border-radius: 50%;
+        display: none;
+      }
+      .name a {
+        color: white;
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        margin-bottom: 16px;
+      }
+      .delete {
+        padding: 10px 0;
+        display: block;
+        width: 100px;
+      }
+    }
+  &:hover .image-info {
+      display: block;
+      transition: 1s;
+    }
+  }
+}
 
 
 @media all and (min-width: 480px) {
@@ -609,6 +663,17 @@ main {
       padding: 10px;
     }
   }
+  
+/* ======================================================
+  microposts/micropost
+======================================================*/
+  .microposts {
+    li {
+      width: 49.5%;
+      height: 25vw;
+    }
+  }
+  
 @media all and (min-width: 1024px) {
 /* ======================================================
   フォーム
@@ -696,6 +761,26 @@ main {
     }
     .main-content {
       padding: 30px 30px 0;
+    }
+  }
+  
+/* ======================================================
+  microposts/micropost
+======================================================*/
+  .microposts {
+    justify-content: flex-start;
+    li {
+      width: 33%;
+      height: 25vw;
+      margin-right: .5%;
+      .image-info {
+        img {
+          display: block;
+        }
+      }
+    }
+    li:nth-child(3n) {
+      margin-right: 0;
     }
   }
 }
