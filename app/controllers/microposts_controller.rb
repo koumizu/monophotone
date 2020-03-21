@@ -9,6 +9,13 @@ class MicropostsController < ApplicationController
   end
   
   def create
+    @micropost = current_user.microposts.build(micropost_params)
+    if @micropost.save
+      flash[:success] = "Micropost created!"
+      redirect_to current_user
+    else
+      render "new"
+    end
   end
   
   def destroy
