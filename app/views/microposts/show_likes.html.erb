@@ -1,0 +1,13 @@
+<% @micropost_show_user = current_user %>
+<div class="favorite-microposts users">
+  <h1><%= @title %></h1>
+  <%= render "users/search" %>
+  <% if @users.any? %>
+    <ul class="users favorite">
+      <%= render @users %>
+    </ul>
+    <%= will_paginate @users, class: "paginate", :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>
+  <% else %>
+    <p><%= @title %>0人です</p>
+  <% end %>
+</div>
