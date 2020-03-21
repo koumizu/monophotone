@@ -1,1 +1,42 @@
-monophotone
+<% if !@micropost_show_user %>
+  <% if @user = User.find_by(id: params[:id]) %>
+    <div class="user-heading-wrapper flexbox">
+      <div class="user-heading-logo">
+        <%= link_to gravatar_for(@user, size: 50), @user %>
+        <%= render 'users/follow_form' if logged_in? %>
+      </div>
+      <div class="user-heading-info">
+        <h1><%= @user.name %></h1>
+        <%= render 'shared/stats' %>
+        <span><%= pluralize(@user.microposts.count, "photo") %></span>
+      </div>
+    </div>
+  <% else %>
+    <% @user = current_user %>
+    <div class="user-heading-wrapper flexbox">
+      <div class="user-heading-logo">
+        <%= link_to gravatar_for(@user, size: 50), @user %>
+      </div>
+      <div class="user-heading-info">
+        <h1><%= @user.name %></h1>
+        <%= render 'shared/stats' %>
+        <span><%= pluralize(@user.microposts.count, "micropost") %></span>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <% @user = current_user %>
+  <div class="user-heading-wrapper flexbox">
+    <div class="user-heading-logo">
+      <%= link_to gravatar_for(@user, size: 50), @user %>
+    </div>
+    <div class="user-heading-info">
+      <h1><%= @user.name %></h1>
+      <%= render 'shared/stats' %>
+      <span><%= pluralize(@user.microposts.count, "micropost") %></span>
+    </div>
+  </div>
+<% end %>
+
+
+
