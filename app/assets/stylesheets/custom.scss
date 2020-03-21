@@ -270,6 +270,18 @@ body {
     }
   }
 }
+
+.follow-users, .favorite-microposts {
+  h1 {
+    font-size: 30px;
+    width: 90%;
+    margin: 0 auto 20px;
+  }
+  p {
+    width: 90%;
+    margin: 0 auto 20px;
+  }
+}
 /* ======================================================
   toppages/home
 ======================================================*/
