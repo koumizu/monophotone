@@ -101,6 +101,14 @@ class User < ApplicationRecord
     like_microposts.include?(micropost)
   end
   
+  def self.search(search) 
+    if search
+      where(['name LIKE ?', "%#{search}%"]) 
+    else
+      all 
+    end
+  end
+  
   private
   
   def downcase_email
