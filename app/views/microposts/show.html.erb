@@ -3,6 +3,10 @@
   <div class="flexbox">
     <div class="micropost-left">
       <%= image_tag @micropost.picture.url, class: "photo" %>
+      <div class="comment-create">
+        <h3>コメントを追加</h3>
+        <%= render partial: 'comments/form', locals: { comment: @comment, micropost: @micropost } %>
+      </div>
     </div>
     <div class="micropost-right">
       <p class="micropost-content">
@@ -15,6 +19,9 @@
         <i class="fa fa-heart"></i>
         <span><%= @micropost.like_users.count %></span>
       </a>
+      <div id="comments_area">
+        <%= render partial: 'comments/index', locals: { comments: @comments } %>
+      </div>
     </div>
   </div>
 </div>
