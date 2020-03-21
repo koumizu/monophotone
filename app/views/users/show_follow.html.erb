@@ -1,0 +1,11 @@
+<div class="follow-users users">
+  <h1><%= @title %></h1>
+  <% if @users.any? %>
+    <ul class="users follow">
+      <%= render @users %>
+    </ul>
+    <%= will_paginate @users, class: "paginate", :previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>
+  <% else %>
+    <p><%= @title %>0人です</p>
+  <% end %>
+</div>
