@@ -1,7 +1,6 @@
 <% @micropost_show_user = current_user %>
 <div class="favorite-microposts users">
   <h1><%= @title %></h1>
-  <%= render "users/search" %>
   <% if @users.any? %>
     <ul class="users favorite">
       <%= render @users %>
