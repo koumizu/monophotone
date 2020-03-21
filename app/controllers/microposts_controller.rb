@@ -5,6 +5,7 @@ class MicropostsController < ApplicationController
   end
   
   def new
+    @micropost = Micropost.new
   end
   
   def create
