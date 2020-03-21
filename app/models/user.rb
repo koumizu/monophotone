@@ -88,6 +88,18 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
   
+  def like(micropost)
+    favorites.create(micropost_id: micropost.id)
+  end
+  
+  def unlike(micropost)
+    favorites.find_by(micropost_id: micropost.id).destroy
+  end
+  
+  def like?(micropost)
+    like_microposts.include?(micropost)
+  end
+  
   private
   
   def downcase_email
