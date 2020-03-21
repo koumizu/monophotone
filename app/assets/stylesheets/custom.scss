@@ -373,6 +373,7 @@ main {
     background: black;
     padding: 10px;
     .user-heading-wrapper {
+      width: 100%;
       padding: 0 10px;
       justify-content: flex-start;
       .user-heading-logo {
@@ -619,7 +620,6 @@ main {
       }
     }
   }
-}
 
 /* ======================================================
   header-wrapper
@@ -725,7 +725,8 @@ main {
     font-size: 36px;
     margin: 60px auto 30px;
   }
-  
+}
+
 @media all and (min-width: 1024px) {
 /* ======================================================
   フォーム

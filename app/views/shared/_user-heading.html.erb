@@ -20,7 +20,7 @@
       <div class="user-heading-info">
         <h1><%= @user.name %></h1>
         <%= render 'shared/stats' %>
-        <span><%= pluralize(@user.microposts.count, "micropost") %></span>
+        <span><%= pluralize(@user.microposts.count, "photo") %></span>
       </div>
     </div>
   <% end %>
@@ -33,7 +33,7 @@
     <div class="user-heading-info">
       <h1><%= @user.name %></h1>
       <%= render 'shared/stats' %>
-      <span><%= pluralize(@user.microposts.count, "micropost") %></span>
+      <span><%= pluralize(@user.microposts.count, "photo") %></span>
     </div>
   </div>
 <% end %>
