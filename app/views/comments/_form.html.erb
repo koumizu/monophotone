@@ -1,0 +1,7 @@
+<%= form_with(model: [micropost, comment], url: micropost_comments_path(@micropost)) do |form| %>
+  <div class="flexbox">
+    <%= form.text_area :content, placeholder: "コメントを送信しよう" %>
+    <%= form.submit "送信", class: "btn-black" %>
+  </div>
+<% end %>
+
