@@ -1,0 +1,14 @@
+<li class="micropost-<%= micropost.id %>">
+  <%= link_to micropost do %>
+    <%= image_tag micropost.picture.url, class: "photo" %>
+  <% end %>
+  <div class="image-info">
+    <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
+    <p class="name"><%= link_to micropost.user.name, micropost.user %></p>
+    <% if current_user?(micropost.user) %>
+      <%= link_to "delete", micropost, method: :delete, class: "delete btn-white",
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </div>
+</li>
+
