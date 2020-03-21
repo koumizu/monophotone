@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   
   def show 
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    @microposts = @user.microposts.paginate(page: params[:page]).search(params[:search])
   end
   
   def new
@@ -49,15 +49,17 @@ class UsersController < ApplicationController
   
   def following
     @title = "フォロー"
+    @url = following_user_path
     @user  = User.find(params[:id])
-    @users = @user.following.paginate(page: params[:page])
+    @users = @user.following.paginate(page: params[:page]).search(params[:search])
     render 'show_follow'
   end
 
   def followers
     @title = "フォロワー"
+    @url = followers_user_path
     @user  = User.find(params[:id])
-    @users = @user.followers.paginate(page: params[:page])
+    @users = @user.followers.paginate(page: params[:page]).search(params[:search])
     render 'show_follow'
   end
   

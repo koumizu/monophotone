@@ -1,5 +1,8 @@
+<% provide(:search_name, 'メッセージ検索') %>
+<% provide(:path, user_path) %>
 <div class="show">
 <% if @user.microposts.any? %>
+  <%= render "users/search" %>
   <ul class="microposts flexbox">
     <%= render @microposts %>
   </ul>

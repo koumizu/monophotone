@@ -32,7 +32,7 @@ class MicropostsController < ApplicationController
   def likes 
     @title = "いいねしたユーザー"
     @micropost = Micropost.find(params[:id])
-    @users = @micropost.like_users.paginate(page: params[:page])
+    @users = @micropost.like_users.paginate(page: params[:page]).search(params[:search])
     render 'show_likes'
   end
   

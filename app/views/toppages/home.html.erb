@@ -1,4 +1,7 @@
+<% provide(:search_name, 'メッセージ検索') %>
+<% provide(:path, root_path) %>
 <% if logged_in? %>
+  <%= render 'users/search' %>
   <%= render 'shared/feed' %>
 <% else %>
   <main>
