@@ -1,5 +1,5 @@
 class MicropostsController < ApplicationController
-  before_action :logged_in_user, only: [:show, :new, :create, :destroy]
+  before_action :logged_in_user, only: [:show, :new, :create, :destroy, :likes]
   before_action :correct_user,   only: :destroy
   
   def show
@@ -25,6 +25,13 @@ class MicropostsController < ApplicationController
     @micropost.destroy
     flash[:success] = "Micropost deleted"
     redirect_to request.referrer || root_url
+  end
+  
+  def likes 
+    @title = "いいねしたユーザー"
+    @micropost = Micropost.find(params[:id])
+    @users = @micropost.like_users.paginate(page: params[:page])
+    render 'show_likes'
   end
   
   private
