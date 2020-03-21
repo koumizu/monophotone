@@ -9,6 +9,7 @@
       <%= link_to "delete", micropost, method: :delete, class: "delete btn-white",
                                        data: { confirm: "You sure?" } %>
     <% end %>
+    <%= render "favorites/favorite", micropost: micropost %>
   </div>
 </li>
 
